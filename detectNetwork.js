@@ -23,6 +23,8 @@ var detectNetwork = function(num) {
   	return 'American Express';
   } else if((prefix(num, 2) >= '51' && prefix(num, 2) <= '55') && length === 16) {
     return 'MasterCard';
+  } else if ((prefix(num,4) === '6011' || prefix(num,2) ==='65' || (prefix(num,3) >= '644' && prefix(num,3) <= '649')) && (length === 16 || length === 19)) {
+    return 'Discover';
   } else if (prefix(num, 1) === '4' && (length === 13 || length === 16 || length === 19)) {
     return 'Visa';
   } else {
